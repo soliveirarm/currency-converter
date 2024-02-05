@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Conversor de moedas</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Conversor de moedas</h1>
+      <p class="header__subtitle">
+        Converta de real para a euro, dólar ou libra
+      </p>
+    </header>
+
+    <span id="exchange-rate"></span>
+
+    <main class="converter">
+      <div>
+        <input
+          class="converter__input"
+          id="brl"
+          type="number"
+          placeholder="Insira o valor desejado"
+        />
+
+        <span>|</span>
+
+        <select name="currencies" id="currencies" class="converter__currencies">
+          <option value="dollar">Dólar</option>
+          <option value="euro">Euro</option>
+          <option value="pound">Libra</option>
+        </select>
+      </div>
+
+      <button class="converter__btn" id="convert">Calcular</button>
+    </main>
+
+    <h2 id="result"></h2>
+
+    <footer>
+      <a href="https://www.exchangerate-api.com" target="_blank"
+        >Rates By Exchange Rate API</a
+      >
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>

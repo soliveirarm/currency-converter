@@ -1,0 +1,138 @@
+$accent: #00d9ff;
+
+* {
+  font-family: "Archivo", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(2, 0, 36);
+  color: white;
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  padding: 2rem;
+
+  &__title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px $accent;
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+#exchange-rate {
+  font-size: 1.3rem;
+  color: lighten($accent, 30%);
+}
+
+.converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 400px;
+
+  div {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    span {
+      color: #ddd;
+    }
+  }
+
+  &__input,
+  &__btn,
+  &__currencies {
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    background: #fff;
+    color: #000;
+    border: 0;
+    width: 13rem;
+    outline: none;
+    font-size: 1rem;
+    transition: ease-in-out 0.4s;
+
+    &:focus {
+      background: lighten($accent, 40%);
+    }
+  }
+
+  &__btn {
+    background-color: $accent;
+    color: #fff;
+    margin-top: 3rem;
+    border: solid 2px darken($accent, 10%);
+    cursor: pointer;
+    transition: ease 0.3s;
+    font-weight: bold;
+    box-shadow: inset 0 0 0 0 $accent;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: darken($accent, 10%);
+    }
+
+    &:active {
+      background-color: inherit;
+    }
+  }
+
+  &__currencies {
+    border: none;
+    font-size: 1rem;
+  }
+}
+
+#result {
+  color: $accent;
+  font-size: 2.5rem;
+  padding: 2rem;
+}
+
+input {
+  accent-color: $accent;
+
+  &:focus::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+a {
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  &:hover {
+    color: $accent;
+  }
+}
