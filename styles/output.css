@@ -59,7 +59,7 @@ body {
   background: #fff;
   color: #000;
   border: 0;
-  width: 13rem;
+  width: 12rem;
   outline: none;
   font-size: 1rem;
   transition: ease-in-out 0.4s;
@@ -115,6 +115,12 @@ a {
 }
 a:hover {
   color: #00d9ff;
+}
+
+@media screen and (max-width: 400px) {
+  .converter__input {
+    width: 10rem;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
