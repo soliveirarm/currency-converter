@@ -16,14 +16,14 @@ async function getData() {
   }
 }
 
-const formatResult = (currency, result) => `${currency}${result.toFixed(2)}`;
+const formatResult = (currency, result) => currency + result.toFixed(2);
 
-getData().then((data) => {
+getData().then(({ usd, eur, gbp }) => {
   const exchangeRate = document.querySelector("#exchange-rate");
-  exchangeRate.textContent = `R$1 = ${formatResult(
-    "$",
-    data.usd
-  )} - ${formatResult("€", data.eur)} - ${formatResult("£", data.gbp)}`;
+  exchangeRate.textContent = `R$1 = ${formatResult("$", usd)} - ${formatResult(
+    "€",
+    eur
+  )} - ${formatResult("£", gbp)}`;
 });
 
 function convert() {
@@ -31,16 +31,16 @@ function convert() {
   const currencies = document.querySelector("#currencies");
 
   if (brl.value !== "") {
-    getData().then((data) => {
+    getData().then(({ usd, eur, gbp }) => {
       switch (currencies.value) {
         case "dollar":
-          result.textContent = formatResult("$", brlVal * data.usd);
+          result.textContent = formatResult("$", brlVal * usd);
           break;
         case "euro":
-          result.textContent = formatResult("€", brlVal * data.eur);
+          result.textContent = formatResult("€", brlVal * eur);
           break;
         case "pound":
-          result.textContent = c;
+          result.textContent = formatResult("£", brlVal * gbp);
           break;
       }
       brl.value = "";
