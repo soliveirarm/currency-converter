@@ -2,5 +2,7 @@
 
 - Made with React + Tailwind CSS + [Exchange Rates API](https://www.exchangerate-api.com/)
 
-![desktop](github/desktop.png)
-![mobile](github/mobile.png)
+<div align="center">
+    <img src="github/desktop.png" />
+    <img width="300px" src="github/mobile.png" />
+</div>
