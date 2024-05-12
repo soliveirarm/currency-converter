@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Reddit Sans", sans-serif;
+  }
+}
+
+body {
+  @apply h-screen grid place-items-center bg-fixed bg-gradient-to-r
+      from-blue-600 to-blue-500;
+}
+
+#root {
+  @apply bg-gradient-to-br from-slate-800 to-slate-900 border border-blue-400 mx-2 px-2 py-4 md:p-8 rounded-lg flex flex-col items-center gap-10;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
